@@ -16,18 +16,15 @@
  
       <div id="sidebar">
         
- 
       </div>
-
       
       <div class="container">
 
         <div id="Body">
-            <h1> This is Imgur colne.</h1>
+            <h1> This is Imgur clone.</h1>
         </div>
    
-     
-      <div id="main">
+           <div id="main">
 
       </div>
     </div>
@@ -39,18 +36,14 @@ import sidebar from "./sidebar.js"
 let sidebar_div = document.getElementById("sidebar");
 sidebar_div.innerHTML = sidebar()
 
-
 import { makeapiCall , appendCall } from "./scripts/search.html";
 
 let api = "ulFoUx0wOJZ5CyBKYqzjT8dMIZQo5qSO9qeSPcEV5nI"
 let res = await makeapiCall(`https://api.unsplash.com/photos/?client_id=${api}`)
 
-
 let parent = document.getElementById("main");
 
 appendCall(res,parent)
-
-
 
 let search_value = document.getElementById("search");
 search_value.addEventListener("keypress", (e)=>{
@@ -111,6 +104,7 @@ async function fetchData(count) {
 //infinite scroll
 
 window.addEventListener("scroll", () => {
+  
   const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
 
   if (scrollTop + clientHeight >= scrollHeight) {
